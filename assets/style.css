@@ -1,12 +1,16 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/*GLOBAL*/
 html, body {
     height: 100%;
     display: grid;
+    scroll-behavior: smooth;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 a {
@@ -14,123 +18,191 @@ a {
     color: black;
 }
 
+a:hover {
+    text-decoration: underline;
+    text-shadow: 5px 5px 10px white;
+}
+
+h1, h2 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h2 {
+    font-size: 3vw;
+    margin-bottom: 3vh;
+}
+
+p {
+    font-size:calc(5px + 1.5vw);
+    margin-bottom: 20px;
+}
+
+.photo:before {
+    content: "";
+    background-size: cover;
+    background-attachment: fixed;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 50%;
+    z-index: -1;    
+}
+
 /*Header*/
-header {
-    height: 100vh;
-    justify-content: center;
+header.header {
+    position: relative;
+    min-height: 100vh;
+    height: 100%;
+    justify-content: space-between;
+    box-shadow: 0 0 50px 50px #555 inset;
+    border-bottom: 10px inset #555;
+}
+
+header.header:before {
+    background-image: url("images/east_pamir_valley.png");
+}
+
+.header-div {
+    margin-top: 25vh;
+    margin-left: 5vw;
+}
+
+h1 {
+    font-size: 7vw;
+}
+
+.header-div p {
+    font-size: 3vw;
+}
+
+.header nav {
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+    font-size: 2vw;
+    margin: 10px 30px;
+}
+
+.header nav a {
+    margin-left: 30px;
+}
+
+/*Purpose Section*/
+.goal {
+    position: relative;
+    min-height: 100vh;
+    height: 100%;
+    border-top: 10px outset #555;
     text-align: center;
-    background-color: green;
-    /*background-image: */
 }
 
-
-nav {
-    text-align: right;
+.goal:before {
+    background-image: url("images/redwoods.png");
 }
 
-/*Main Body*/
-
-article {
-    min-height: 200px;
-    height: 100vh;
-    
-    background-color: yellow;
+.goal p {
+    font-size:calc(5px + 1.5vw);
 }
 
-main {
-    min-height: 200px;
-    height: 100vh;
-    /*display: flex;*/
-    
-    background-color: red;
-    /*background-image: */
+/*Projects Main Section*/
+main.work {
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 10px outset #555;
+    background-image: linear-gradient(45deg, #555, white);
+}
+
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.icon-title {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    background-color: gray;
+    margin-bottom: 20px;
+    padding: 20px 5px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.icons div {
+    position: relative;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.icons div a img {
+    display: block;
+    width: 100%;
 }
 
 .arik-phr {
+    flex-basis: 80%;
+}
+
+.mha-flash, .earthlodge {
+    flex-basis: 40%;
+}
+
+
+/*About Me Aside*/
+.about_me {
     position: relative;
-    width: 200px;
-    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    height: 100%;
+    border-top: 10px outset #555;
+    display: flex;
+    flex-direction: column;
 }
 
-.arik-phr a img {
-    display: block;
-    width: 100%;
+.about_me:before {
+    background-image: url("images/andes.png");
 }
 
-.arik-title {
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    background-color: gray;
-    opacity: 0;
-    transition: .5s ease;
+.about_me h2 {
+    align-self: center;
 }
-
-.arik-phr:hover .arik-title {
-    opacity: 70%;
-}
-
-.horiseon {
-    position: relative;
-    width: 100px;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-.horiseon a img {
-    display: block;
-    width: 100%;
-}
-
-.hor-title {
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    background-color: gray;
-    opacity: 70%;
-}
-
-.mha-flash {
-    position: relative;
-    width: 100px;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-.mha-flash a img {
-    display: block;
-    width: 100%;
-}
-
-.mha-flash-title {
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    background-color: gray;
-    opacity: 70%;
-}
-
-/*Aside*/
-
-section {
-    min-height: 200px;
-    height: 100vh;
-    /*display: flex;*/
-    background-color: blue;
-    /*background-image:*/
-}
-
 
 /*Footer*/
-footer {
-   min-height: 100px;
-   height: 100vh;
-   background-color: purple;
-   /*background-image: */
+.footer {
+    position: relative;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.footer:before {
+    background-image: url("images/moose_crossing.png");
+}
+
+.footer .contact_list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3vh;
+}
+
+.footer h2 {
+    font-size: 5vw;
+    margin-top: 10vh;
+}
+
+.contact_list a {
+    font-size:calc(5px + 2.5vw);
+}
 
 /*Media Queries: Mobile First*/
 @media screen and (min-width: 768px) {
-
     
     body {
         grid-template-columns: 50% 50%;
@@ -140,7 +212,7 @@ footer {
         grid-column: 1 / 3;
     }
 
-    section {
+    .about_me {
         grid-column: 1 / 3;
     }
 
@@ -148,24 +220,4 @@ footer {
         grid-column: 1 / 3;
     }
     
-}
-
-@media screen and (min-width: 1200px) {
-
-    body {
-        grid-template-columns: 33% 33% 33%;
-    }
-
-    header {
-        grid-column: 1 / 4;
-    }
-
-    section {
-        grid-column: auto;
-    }
-        
-    footer {
-        grid-column: 1 / 4;
-    }
-
 }
